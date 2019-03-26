@@ -10,5 +10,5 @@ type pokedex = pokemon list;;
 
 let pokes = [{name = "c"; hp=42; ptype=Fire}; {name = "s"; hp=36; ptype=Water}; {name = "b"; hp=33; ptype=Grass}];;
 
-(* This doesn't work in Utop with Base because of the signature difference in List.map? *)
-let getHps lst =  List.map (fun m -> m.hp) lst;;
+(* This doesn't work in Utop with Core because of the signature difference in List.map? *)
+let getHps lst =  List.map ~f:(fun m -> m.hp) lst;;
