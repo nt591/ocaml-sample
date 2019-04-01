@@ -87,3 +87,37 @@ let drop n lst = if List.length lst < n then [] else
     | (_, []) -> l
     | (_, _::t) -> drop_acc (count-1) t
     in drop_acc n lst
+
+
+
+type poketype = Normal | Fire | Water
+
+type pokemon = {
+  name: string;
+  hp: int;
+  ptype: poketype
+}
+
+(* Write a function safe_hd : 'a list -> 'a option that returns
+Some x if the head of the input list is x, and None if the input list is empty. *)
+
+let safe_hd lst =
+  match lst with
+  | [] -> None
+  | h::t -> Some h
+
+(* Also write a function safe_tl : 'a list -> 'a list option that returns the tail of the list, or None if the list is empty. *)
+
+let safe_tl lst =
+  match lst with
+  | [] -> None
+  | h::t -> Some t
+
+(* Write a function max_hp : pokemon list -> pokemon option that, given a list of pokemon, finds the Pokémon with the highest HP. *)
+
+
+(* todo: figure out how to keep a reference to last one seen *)
+(* let max_hp (lst: pokemon list) =
+  match lst with
+  | [] -> None
+  | lst -> List.sort *)
